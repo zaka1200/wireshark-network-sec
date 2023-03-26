@@ -103,8 +103,19 @@ Wireshark is a popular open-source network protocol analyzer that allows users t
 When you first open Wireshark, the initial interface is the "Capture" interface. This interface allows us to select the network interface we want to use to capture network traffic and choose the protocol we want to capture.
 
 - Interface selection : a list of available network interfaces. This includes both wired and wireless interfaces on our computer. we can select the interface we want to use to capture network traffic by clicking on it.
-
 - Filter selection : a filter bar where we can specify the protocol you want to capture. By default, all protocols are selected
-
 - capture: Once we've selected our interface and protocol, we click on the "Capture" button to begin capturing network traffic.
 
+# test :
+
+we sent an icmp packet from client 2 to client 1 
+
+here is the result on wireshark :
+
+![image](https://user-images.githubusercontent.com/121964432/227812511-9037ce83-a36f-408e-b996-110ee5e96552.png)
+
+The Wireshark user interface is divided into three main sections: the packet list pane, the packet details pane, and the packet bytes pane
+
+- The packet list pane shows a list of all captured network packets. Each packet is displayed as a separate row in the list and includes information such as the source and destination IP addresses, protocol type, and time of arrival.
+- The packet details pane shows a detailed view of the currently selected packet in the packet list pane. This pane displays a hierarchical view of the packet data, with each layer of the protocol stack shown in a separate expandable section. Users can drill down into each section to see detailed information about the packet data.
+- The packet bytes pane shows the raw packet data in hexadecimal and ASCII format. This pane is useful for analyzing packet payloads and identifying patterns in the data
