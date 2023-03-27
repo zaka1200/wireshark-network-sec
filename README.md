@@ -119,3 +119,35 @@ The Wireshark user interface is divided into three main sections: the packet lis
 - The packet list pane shows a list of all captured network packets. Each packet is displayed as a separate row in the list and includes information such as the source and destination IP addresses, protocol type, and time of arrival.
 - The packet details pane shows a detailed view of the currently selected packet in the packet list pane. This pane displays a hierarchical view of the packet data, with each layer of the protocol stack shown in a separate expandable section. Users can drill down into each section to see detailed information about the packet data.
 - The packet bytes pane shows the raw packet data in hexadecimal and ASCII format. This pane is useful for analyzing packet payloads and identifying patterns in the data
+
+```cmd
+00 00 00 01 00 06 00 Oc  29 fa 1f 58 00 00 08 00
+45 00 00 54 a5 1a 40 00  40 01 02 82 c8 04 02 02
+c8 04 01 02 08 00 6e 9d  00 02 00 01 35 d9 20 64
+00 00 00 00 71 4f 03 00  00 00 00 00 10 11 12 13
+14 15 16 17 18 19 1a 1b  1c 1d 1e 1f 20 21 22 23
+24 25 26 27 28 29 2a 2b  2c 2d 2e 2f 30 31 32 33
+34 35 36 37
+```
+
+This packet is an IPv4 packet with an ICMP payload, sent from IP address 200.4.2.2 to IP address 200.4.1.2. Here's a breakdown of the packet bytes:
+
+- Bytes 0-1: Destination MAC address set to all zeros (broadcast address).
+- Bytes 2-3: Source MAC address set to 00:06:00:0c:29:fa.
+- Bytes 4-5: Ethernet Type set to 0x0800 (indicating an IPv4 payload).
+- Bytes 6-7: IPv4 Version and Header Length. The first four bits (0x4) represent the IPv4 version, and the next four bits (0x5) represent the header length (in 32-bit words). The header length is 20 bytes (5 x 4).
+Bytes 8-9: IPv4 Differentiated Services Field (DSF), set to 0x00.
+Bytes 10-11: IPv4 Total Length field, set to 0x0054 (84 bytes).
+Bytes 12-13: IPv4 Identification field, set to 0xa51a.
+Bytes 14-15: IPv4 Flags and Fragment Offset fields, set to 0x4000 (Don't Fragment flag set).
+Bytes 16-17: IPv4 Time to Live (TTL), set to 0x40 (64 in decimal).
+Bytes 18-19: IPv4 Protocol field, set to 0x01 (ICMP).
+Bytes 20-21: IPv4 Header Checksum, calculated based on the IPv4 header.
+Bytes 22-25: IPv4 Source Address, set to 200.4.2.2.
+Bytes 26-29: IPv4 Destination Address, set to 200.4.1.2.
+Bytes 30-31: ICMP Type field, set to 0x08 (Echo Request).
+Bytes 32-33: ICMP Code field, set to 0x00.
+Bytes 34-35: ICMP Checksum field, calculated based on the ICMP payload and header.
+Bytes 36-39: ICMP Identifier field, set to 0x6e9d.
+Bytes 40-41: ICMP Sequence Number field, set to 0x0002.
+Bytes 42-49: ICMP Payload (Data), which is 8 bytes long and set to 0x0010 0x11 0x12 0x13 0x14 0x15 0x16 0x17.
