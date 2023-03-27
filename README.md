@@ -136,18 +136,18 @@ This packet is an IPv4 packet with an ICMP payload, sent from IP address 200.4.2
 - Bytes 2-3: Source MAC address set to 00:06:00:0c:29:fa.
 - Bytes 4-5: Ethernet Type set to 0x0800 (indicating an IPv4 payload).
 - Bytes 6-7: IPv4 Version and Header Length. The first four bits (0x4) represent the IPv4 version, and the next four bits (0x5) represent the header length (in 32-bit words). The header length is 20 bytes (5 x 4).
-Bytes 8-9: IPv4 Differentiated Services Field (DSF), set to 0x00.
-Bytes 10-11: IPv4 Total Length field, set to 0x0054 (84 bytes).
-Bytes 12-13: IPv4 Identification field, set to 0xa51a.
-Bytes 14-15: IPv4 Flags and Fragment Offset fields, set to 0x4000 (Don't Fragment flag set).
-Bytes 16-17: IPv4 Time to Live (TTL), set to 0x40 (64 in decimal).
-Bytes 18-19: IPv4 Protocol field, set to 0x01 (ICMP).
-Bytes 20-21: IPv4 Header Checksum, calculated based on the IPv4 header.
-Bytes 22-25: IPv4 Source Address, set to 200.4.2.2.
-Bytes 26-29: IPv4 Destination Address, set to 200.4.1.2.
-Bytes 30-31: ICMP Type field, set to 0x08 (Echo Request).
-Bytes 32-33: ICMP Code field, set to 0x00.
-Bytes 34-35: ICMP Checksum field, calculated based on the ICMP payload and header.
-Bytes 36-39: ICMP Identifier field, set to 0x6e9d.
-Bytes 40-41: ICMP Sequence Number field, set to 0x0002.
-Bytes 42-49: ICMP Payload (Data), which is 8 bytes long and set to 0x0010 0x11 0x12 0x13 0x14 0x15 0x16 0x17.
+- Bytes 8-9: IPv4 Differentiated Services Field (DSF), set to 0x00.
+- Bytes 10-11: IPv4 Total Length field, set to 0x0054 (84 bytes).
+- Bytes 12-13: IPv4 Identification field, set to 0xa51a.
+- Bytes 14-15: IPv4 Flags and Fragment Offset fields, set to 0x4000 (Don't Fragment flag set).
+- Bytes 16-17: IPv4 Time to Live (TTL), set to 0x40 (64 in decimal).
+- Bytes 18-19: IPv4 Protocol field, set to 0x01 (ICMP).
+- Bytes 20-21: IPv4 Header Checksum, calculated based on the IPv4 header.
+- Bytes 22-25: IPv4 Source Address, set to 200.4.2.2.
+- Bytes 26-29: IPv4 Destination Address, set to 200.4.1.2.
+- Bytes 30-31: ICMP Type field, set to 0x08 (Echo Request).
+- Bytes 32-33: ICMP Code field, set to 0x00.
+- Bytes 34-35: ICMP Checksum field, calculated based on the ICMP payload and header.
+- Bytes 36-39: ICMP Identifier field, set to 0x6e9d.
+- Bytes 40-41: ICMP Sequence Number field, set to 0x0002.
+- Bytes 42-49: ICMP Payload (Data), which is 8 bytes long and set to 0x0010 0x11 0x12 0x13 0x14 0x15 0x16 0x17.
